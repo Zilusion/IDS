@@ -1,0 +1,45 @@
+:root {
+	/* Base colors */
+	--transparent: transparent;
+	--white: #ffffff;
+	--white-80: rgba(255, 255, 255, 0.8);
+	--white-60: rgba(255, 255, 255, 0.6);
+	--white-50: rgba(255, 255, 255, 0.5);
+	--white-30: rgba(255, 255, 255, 0.3);
+	--white-15: rgba(255, 255, 255, 0.15);
+	--light-gray: #c2c2c2;
+	--gray: #797979;
+	--darker-gray: #747477;
+	--dark-gray: #333037;
+	--light-black: #17181c;
+	--black: #000000;
+	--black-15: rgba(0, 0, 0, 0.15);
+
+	/* Base variables */
+	--background-color: var(--white);
+	--overlay-color: var(--white-80);
+
+	/* Fonts */
+	--font-main: 'Inter';
+	--font-secondary: 'ALS Hauss';
+
+	/* Container */
+	--container-width: 1440px;
+	--container-padding: 50px;
+
+	/* Text colors */
+	--text-primary: var(--dark-gray);
+	--text-secondary: var(--black);
+	--text-inverse: var(--white);
+}
+
+/* Breakpoints */
+$xxs: 320px;
+$xs: 380px;
+$sm: 480px;
+$ms: 576px;
+$md: 768px;
+$ml: 880px;
+$lg: 1024px;
+$xl: 1200px;
+$xxl: 1440px;

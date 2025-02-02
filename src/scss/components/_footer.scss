@@ -1,0 +1,202 @@
+@use "./../base/mixins" as mixins;
+
+.footer {
+    background-color: var(--dark-gray);
+    
+	&__container {
+		padding-block: 60px 70px;
+		display: flex;
+		gap: 60px;
+
+        @include mixins.media-lg {
+            flex-direction: column-reverse;
+        }
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		flex-basis: 36%;
+	}
+
+	&__logo-icon {
+		fill: var(--white);
+	}
+
+	&__title {
+		color: var(--darker-gray);
+		font-size: 18px;
+		line-height: 1.3;
+		letter-spacing: -0.02em;
+		margin-bottom: 10px;
+	}
+
+	&__text {
+		display: block;
+		color: var(--white);
+		font-size: 20px;
+		line-height: 1.4;
+		letter-spacing: 0.04em;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+
+        &:active {
+            filter: brightness(90%);
+            transition-duration: 0.05s;
+        }
+
+        @include mixins.media-ms {
+            font-size: 16px;
+        }
+	}
+
+	&__socials {
+		display: flex;
+		gap: 12px;
+	}
+
+	&__socials-item {
+		width: 50px;
+		height: 50px;
+		display: grid;
+		place-items: center;
+		border-radius: 50%;
+		background-color: var(--white);
+        border: 1px solid var(--transparent);
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            background-color: var(--dark-gray);
+            border-color: var(--white);
+
+            svg {
+                fill: var(--white);
+            }
+        }
+
+        &:active {
+            filter: brightness(90%);
+            transition-duration: 0.05s;
+        }
+	}
+
+	&__form {
+		background-color: var(--light-black);
+		padding: 20px;
+		border-radius: 16px;
+		flex-basis: 64%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-title {
+		color: var(--white);
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1.4;
+		letter-spacing: 0.04em;
+		margin-bottom: 10px;
+	}
+
+	&__form-text {
+		color: var(--darker-gray);
+		font-size: 18px;
+		line-height: 1.3;
+		letter-spacing: -0.02em;
+		margin-bottom: 20px;
+
+        @include mixins.media-ms {
+            font-size: 16px;
+        }
+	}
+
+	&__form-input,
+	&__form-file-label {
+		padding: 9px 12px;
+		color: var(--white-60);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1.4;
+		letter-spacing: 0.04em;
+		border-radius: 12px;
+		border: 1px solid var(--white-30);
+
+        &:hover,
+        &:focus {
+            border-color: var(--white);
+        }
+
+        &:active {
+            filter: brightness(90%);
+            transition-duration: 0.05s;
+        }
+
+        @include mixins.media-ms {
+            font-size: 14px;
+        }
+
+		&::placeholder {
+			color: var(--white-30);
+		}
+
+		&:not(:last-of-type) {
+			margin-bottom: 16px;
+		}
+
+		&:last-of-type {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__form-about {
+		min-height: 65px;
+		resize: vertical;
+	}
+
+	&__form-file-label {
+		color: var(--white-30);
+		text-align: center;
+		padding-block: 22px;
+        border-style: dashed;
+        margin-bottom: 20px;
+	}
+
+	&__form-file-label-text {
+		position: relative;
+		&::after {
+			@include mixins.icon(
+				19px,
+				19px,
+				currentColor,
+				url('./../assets/images/icons/stack/sprite.stack.svg#file')
+			);
+			@include mixins.icon-position(left, -24px, top, 50%, 0, -50%);
+		}
+	}
+
+    &__form-button {
+        padding: 10px 32px;
+        border-radius: 50px;
+        border: 2px solid var(--transparent);
+        color: var(--black);
+        background-color: var(--white);
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            border-color: var(--white);
+            color: var(--white);
+            background-color: var(--light-black);
+        }
+
+        &:active {
+            filter: brightness(90%);
+            transition-duration: 0.05s;
+        }
+    }
+}

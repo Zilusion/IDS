@@ -1,0 +1,58 @@
+extends ./../layouts/layout.pug
+block styles 
+    link(rel="stylesheet" href="./css/index.css")
+block main
+    main.main
+        section.projects
+            .container.projects__container
+                h1.projects__title 1276 проектов — сделано нами
+                form.projects__filter(action="#")
+                    - 
+                        var filters = [
+                            { value: "all", label: "Все" },
+                            { value: "web-design", label: "Веб дизайн" },
+                            { value: "graphic-design", label: "Графический дизайн" },
+                            { value: "navigation", label: "Навигация" },
+                            { value: "industrial-design", label: "Промышленный дизайн" },
+                            { value: "interior-design", label: "Интерьеры" },
+                            { value: "video", label: "Видео" },
+                            { value: "motion-design", label: "Моушен-дизайн" },
+                            { value: "illustrations", label: "Иллюстрации" },
+                            { value: "patterns", label: "Паттерны" },
+                            { value: "exteriors", label: "Экстерьеры" },
+                            { value: "identity", label: "Айдентика" },
+                            { value: "architecture", label: "Архитектура" },
+                            { value: "books", label: "Книги" },
+                            { value: "presentations", label: "Презентации" },
+                            { value: "logotypes", label: "Логотипы" },
+                            { value: "urban-space", label: "Городская среда" },
+                            { value: "advertising", label: "Реклама" },
+                            { value: "interfaces", label: "Интерфейсы" },
+                            { value: "fonts", label: "Шрифты" }
+                        ]
+                    each filter, index in filters
+                        .projects__filter-item
+                            input.projects__filter-checkbox(type="radio" class="visually-hidden" name="filter" value=filter.value id=filter.value checked=(filter.value === 'all'))
+                            label.projects__filter-label(for=filter.value) #{filter.label}
+                    if filters.length > 10
+                        button.projects__filter-show-more-button(type="button") Все теги...
+
+                .projects__cards
+                    - 
+                        var projects = [
+                            { title: "Ребрендинг для restore:", image: "restore.jpg", id: "restore" },
+                            { title: "Промышленный дизайн new-car для Skoda", image: "skoda.jpg", id: "skoda" },
+                            { title: "Карьерный сайт Avito Career", image: "avito.jpg", id: "avito" },
+                            { title: "Перезапуск каталога приложений для Мегафона", image: "megaphone.jpg", id: "megaphone" },
+                            { title: "Айдентика киносервиса START", image: "start.jpg", id: "start" },
+                            { title: "Презентация умных устройств SberDevices", image: "sberdevices.jpg", id: "sberdevices" },
+                            { title: "Айдентика МТС Музыка", image: "mts.jpg", id: "mts" },
+                            { title: "Новая экосистема для тинькофф", image: "tinkoff.jpg", id: "tinkoff" }
+                        ]
+                    each project in projects
+                        .projects__card(class="projects__card--" + project.id)
+                            h2.projects__card-title= project.title
+                            a.projects__card-link(href="./" + project.id + '.html') кейс
+                            img.projects__card-image(src="./assets/images/pages/index/" + project.image, alt=project.image)
+block scripts 
+    script(type="module", src="./js/index.bundle.js") 

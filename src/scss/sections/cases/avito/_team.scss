@@ -1,0 +1,55 @@
+@use "./../../../base/mixins" as mixins;
+
+.team {
+	margin-bottom: 70px;
+
+	&__title {
+		font-size: 45px;
+		line-height: 1.5;
+
+		@include mixins.media-md {
+			font-size: 35px;
+		}
+
+		@include mixins.media-sm {
+			font-size: 30px;
+		}
+	}
+
+	&__members {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 30px 25px;
+
+		@include mixins.media-ms {
+			justify-items: center;
+		}
+	}
+
+	&__member {
+		max-width: 320px;
+	}
+
+	&__member-image {
+		width: 100%;
+		background-color: #d9d9d9;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		border-radius: 15px;
+		margin-bottom: 15px;
+	}
+
+	&__member-info {
+		font-family: 'ALS Hauss';
+	}
+
+	&__member-name {
+		font-size: 25px;
+		font-weight: 500;
+		line-height: 1.5;
+	}
+
+	&__member-role {
+		font-size: 18px;
+	}
+}

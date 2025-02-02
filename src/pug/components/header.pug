@@ -1,0 +1,32 @@
+header.header
+    .container.header__container
+        a.header__logo(href="#") 
+            svg.icon.icon--logo.header__logo-icon
+                use(xlink:href="./assets/images/icons/symbol/sprite.symbol.svg#logo")
+        nav.header__nav
+            ul.header__nav-list
+                - var navItems = ['Главная', 'Проекты', 'О нас']
+                each item in navItems
+                    li(class="header__nav-item" + (item === 'Проекты' ? ' header__nav-item--selected' : ''))
+                        a.header__nav-link(href=item === 'Проекты' ? './index.html' : '#')= item
+        .header__options
+            select#language.header__select(name="language")
+                option.header__option(value="RU") RU
+                option.header__option(value="EN") EN
+            .header__search 
+                input#search.header__search-input(type="text" name="search" placeholder="Поиск...")
+            button.header__login-button Войти  
+            button.burger-button.header__burger-button
+                span.burger-button__icon 
+                    span.burger-button__line
+                    span.burger-button__line
+                    span.burger-button__line 
+.mobile-menu
+    nav.mobile-menu__nav
+        ul.mobile-menu__nav-list
+            - var navItems = ['Главная', 'Проекты', 'О нас']
+            each item in navItems
+                li(class="mobile-menu__nav-item" + (item === 'Проекты' ? ' mobile-menu__nav-item--selected' : ''))
+                    a.mobile-menu__nav-link(href=item === 'Проекты' ? './index.html' : '#')= item
+    button.mobile-menu__login-button Войти
+

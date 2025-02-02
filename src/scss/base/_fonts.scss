@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'Inter';
+	font-display: swap;
+	src: local('Inter'), url("../assets/fonts/Inter/Inter-Medium.woff2") format("woff2"), url("../assets/fonts/Inter/Inter-Medium.woff") format("woff"), url("../assets/fonts/Inter/Inter-Medium.ttf") format("truetype"), url("../assets/fonts/Inter/Inter-Medium.eot") format("embedded-opentype");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Inter';
+	font-display: swap;
+	src: local('Inter'), url("../assets/fonts/Inter/Inter-Regular.woff2") format("woff2"), url("../assets/fonts/Inter/Inter-Regular.woff") format("woff"), url("../assets/fonts/Inter/Inter-Regular.ttf") format("truetype"), url("../assets/fonts/Inter/Inter-Regular.eot") format("embedded-opentype");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Inter';
+	font-display: swap;
+	src: local('Inter'), url("../assets/fonts/Inter/Inter-SemiBold.woff2") format("woff2"), url("../assets/fonts/Inter/Inter-SemiBold.woff") format("woff"), url("../assets/fonts/Inter/Inter-SemiBold.ttf") format("truetype"), url("../assets/fonts/Inter/Inter-SemiBold.eot") format("embedded-opentype");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ALS Hauss';
+	font-display: swap;
+	src: local('ALS Hauss'), url("../assets/fonts/ALS Hauss/ALSHauss-Medium.woff2") format("woff2"), url("../assets/fonts/ALS Hauss/ALSHauss-Medium.woff") format("woff"), url("../assets/fonts/ALS Hauss/ALSHauss-Medium.ttf") format("truetype"), url("../assets/fonts/ALS Hauss/ALSHauss-Medium.eot") format("embedded-opentype");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ALS Hauss';
+	font-display: swap;
+	src: local('ALS Hauss'), url("../assets/fonts/ALS Hauss/ALSHauss-Regular.woff2") format("woff2"), url("../assets/fonts/ALS Hauss/ALSHauss-Regular.woff") format("woff"), url("../assets/fonts/ALS Hauss/ALSHauss-Regular.ttf") format("truetype"), url("../assets/fonts/ALS Hauss/ALSHauss-Regular.eot") format("embedded-opentype");
+	font-weight: 400;
+	font-style: normal;
+}

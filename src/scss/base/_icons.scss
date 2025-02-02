@@ -1,0 +1,38 @@
+.icon {
+	fill: transparent;
+	stroke: transparent;
+	width: 40px;
+	height: 40px;
+	transition: all 0.3s ease-in-out;
+
+	&--logo {
+		width: 104px;
+		height: 50px;
+
+		fill: var(--dark-gray);
+
+		&:hover {
+			scale: 1.1;
+		}
+
+		&:active {
+			filter: brightness(90%);
+			transition-duration: 0.05s;
+			scale: 0.9;
+		}
+	}
+
+	&--social {
+		width: 16px;
+		height: 16px;
+
+		fill: var(--dark-gray);
+	}
+
+	&--next,
+	&--prev {
+		width: 40px;
+		height: 40px;
+		fill: var(--white);
+	}
+}

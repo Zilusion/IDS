@@ -1,0 +1,11 @@
+@use "./../../../base/mixins" as mixins;
+
+.growth {
+	margin-bottom: 70px;
+
+    &__images {
+        display: flex;
+        gap: 32px;
+        justify-content: space-between;
+    }
+}

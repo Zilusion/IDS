@@ -1,0 +1,96 @@
+@use "./../../../base/mixins" as mixins;
+
+.tasks {
+	padding-block: 50px;
+	background-color: #f9f9f9;
+    margin-bottom: 70px;
+
+    @include mixins.media-md {
+        margin-bottom: 40px;
+    }
+
+	&__title {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		gap: 80px;
+
+        @include mixins.media-xl {
+            gap: 55px;
+        }
+
+        @include mixins.media-lg {
+            gap: 40px;
+        }
+
+        @include mixins.media-ml {
+            flex-wrap: wrap;
+        }
+	}
+
+	&__item {
+		max-width: 280px;
+		text-wrap: pretty;
+		text-align: center;
+		font-size: 25px;
+		position: relative;
+		padding-top: 110px;
+
+        @include mixins.media-lg {
+            font-size: 20px;
+        }
+
+        @include mixins.media-ml {
+            max-width: 320px;
+        }
+
+        @include mixins.media-sm {
+            padding-top: 80px;
+        }
+
+		&::before {
+			content: attr(data-step);
+			display: block;
+			font-size: 40px;
+			font-weight: 600;
+			margin-bottom: 20px;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			color: var(--white);
+			display: grid;
+			place-content: center;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			translate: -50%;
+
+            @include mixins.media-sm {
+                width: 70px;
+                height: 70px;
+            }
+		}
+
+		&:nth-child(1) {
+			&::before {
+				background-color: #00e066;
+			}
+		}
+
+		&:nth-child(2) {
+			&::before {
+				background-color: #05aaff;
+			}
+		}
+
+		&:nth-child(3) {
+			&::before {
+				background-color: #ff4053;
+			}
+		}
+	}
+}

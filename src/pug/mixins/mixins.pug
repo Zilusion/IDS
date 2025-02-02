@@ -1,0 +1,43 @@
+mixin tags(tags, parentClass = '')
+    - var tagsClass = parentClass ? `${parentClass}__tags` : ''
+    - var itemClass = parentClass ? `${parentClass}__tags-item` : ''
+
+    .tags(class=tagsClass)
+        each tag in tags
+            span.tags__item(class=itemClass)= tag
+
+
+mixin teamList(members)
+    .team__members
+        each member in members
+            +teamMember(member.name, member.role, member.image)
+
+mixin teamMember(name, role, image="./assets/images/icons/stack/sprite.stack.svg#nonexistent")
+    .team__member
+        img.team__member-image(src=image, alt=name)
+        .team__member-info
+            h3.team__member-name= name
+            p.team__member-role= role
+
+mixin projectsList(projects)
+    .projects__wrapper
+        .projects__cards
+            each project in projects
+                +projectCard(project.title, project.image, project.id)
+        button.projects__button.projects__button--prev(type="button")
+            svg.icon.icon--prev
+                use(xlink:href="./assets/images/icons/symbol/sprite.symbol.svg#prev")
+        button.projects__button.projects__button--next(type="button")
+            svg.icon.icon--next
+                use(xlink:href="./assets/images/icons/symbol/sprite.symbol.svg#next")
+
+mixin projectCard(title, image, id)
+    .projects__card(class="projects__card--" + id)
+        h2.projects__card-title= title
+        a.projects__card-link(href="./" + id + '.html') кейс
+        img.projects__card-image(src="./assets/images/pages/index/" + image, alt=title)
+
+mixin taskList(tasks)
+    ul.tasks__list
+        each task, index in tasks
+            li.tasks__item(data-step=(index + 1))= task

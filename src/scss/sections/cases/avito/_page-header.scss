@@ -1,0 +1,64 @@
+@use "./../../../base/mixins" as mixins;
+
+.page-header {
+	padding-top: 114px;
+    background-color: #e5f6fe;
+
+	&__tags {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 45px;
+	}
+
+    &__tags-item {
+        &:not(:nth-child(2)) {
+            border-bottom: 1px solid var(--dark-gray);
+        }
+    }
+
+	&__title {
+        text-align: center;
+        font-size: 55px;
+        font-weight: 600;
+        text-wrap: pretty;
+
+        @include mixins.media-ms {
+            font-size: 38px;
+        }
+
+        @include mixins.media-xs {
+            font-size: 32px;
+        }
+	}
+}
+
+.section-title {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 20px;
+
+    @include mixins.media-md {
+        font-size: 30px;
+    }
+
+    @include mixins.media-sm {
+        font-size: 25px;
+    }
+}
+
+.section-description {
+    font-size: 25px;
+    margin-bottom: 20px;
+
+    @include mixins.media-md {
+        font-size: 20px;
+    }
+
+    @include mixins.media-sm {
+        font-size: 16px;
+    }
+}

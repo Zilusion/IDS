@@ -1,0 +1,81 @@
+extends ./../layouts/layout.pug
+
+block styles 
+    link(rel="stylesheet" href="./css/avito.css")
+
+block main
+    include ./../mixins/mixins.pug
+
+    main.main
+        section.page-header 
+            .container.page-header__container
+                +tags(["Айдентика", "Сайт", "Приложение"], 'page-header')
+                h1.page-header__title Карьерный сайт Avito Career
+                img.page-header__image(src="./assets/images/pages/cases/avito/career.jpg" alt="Станьте частью команды Авито")
+
+        section.tasks
+            .container.tasks__container
+                h2.section-title.tasks__title Задачи
+                +taskList([
+                    "Доработать UX и разработать дизайн-концепцию",
+                    "Создать дизайн страниц и шаблонов для социальных сетей",
+                    "Написать тексты интерфейсов и провести UX-тесты"
+                ])
+
+        section.work
+            .container.tasks__container
+                h2.section-title.work__title Работа в Авито - ежедневные вызовы и развитие
+                p.section-description Avito Career – сайт для поиска работы в командах Авито, крупнейшей онлайн-платформы объявлений в России и мире по данным SimilarWeb.
+                img(src="./assets/images/pages/cases/avito/work.jpg" alt="Работа в Авито - это ежедневный вызов и постоянное развитие")
+
+        section.growth
+            .container.tasks__container
+                h2.section-title.growth__title Активный рост в пяти направлениях
+                p.section-description Идет разработка основных направлений бизнеса, вы можете знать их как категории на Авито.
+                .growth__images
+                    .growth__images-item
+                        img(src="./assets/images/pages/cases/avito/growth-1.jpg" alt="Рост 1")
+                    .growth__images-item
+                        img(src="./assets/images/pages/cases/avito/growth-2.jpg" alt="Рост 2")
+                    .growth__images-item
+                        img(src="./assets/images/pages/cases/avito/growth-3.jpg" alt="Рост 3")
+
+        section.search
+            .container.tasks__container
+                h2.section-title.search__title Удобный поиск вакансий
+                p.section-description У Авито всегда рады видеть в своих рядах целеустремленных и талантливых сотрудников. В студии для них задизайнили удобный поиск по доступным вакансиям.
+                img(src="./assets/images/pages/cases/avito/search.jpg" alt="Удобный поиск вакансий")
+
+        section.team
+            .container.tasks__container
+                h2.section-title.team__title Над проектом работали
+                - 
+                    var teamMembers = [
+                        { name: "Федор Краснов", role: "Арт-директор" },
+                        { name: "Сергей Злыднев", role: "Дизайнер" },
+                        { name: "Анна Жукова", role: "Дизайнер" },
+                        { name: "Алина Аленина", role: "Моушен-дизайнер" },
+                        { name: "Максим Оленин", role: "Редактор" },
+                        { name: "Рома Паренюк", role: "Менеджер" },
+                        { name: "Ярослав Петров", role: "Аккаунт-менеджер" }
+                    ]
+                +teamList(teamMembers)
+
+        section.projects
+            .container.tasks__container
+                h2.section-title.projects__title Ещё проекты
+                - 
+                    var projects = [
+                        { title: "Ребрендинг для restore:", image: "restore.png", id: "restore" },
+                        { title: "Промышленный дизайн new-car для Skoda", image: "skoda.png", id: "skoda" },
+                        //- { title: "Карьерный сайт Avito Career", image: "avito.png", id: "avito" },
+                        { title: "Перезапуск каталога приложений для Мегафона", image: "megaphone.png", id: "megaphone" },
+                        { title: "Айдентика киносервиса START", image: "start.png", id: "start" },
+                        { title: "Презентация умных устройств SberDevices", image: "sberdevices.png", id: "sberdevices" },
+                        { title: "Айдентика МТС Музыка", image: "mts.png", id: "mts" },
+                        { title: "Новая экосистема для Тинькофф", image: "tinkoff.png", id: "tinkoff" }
+                    ]
+                +projectsList(projects)
+
+block scripts 
+    script(type="module" src="./js/avito.bundle.js")

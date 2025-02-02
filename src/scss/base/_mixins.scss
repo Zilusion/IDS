@@ -1,0 +1,97 @@
+@use "./variables" as variables;
+
+@mixin media-xxl {
+	@media screen and (max-width: variables.$xxl) {
+		@content;
+	}
+}
+
+@mixin media-xl {
+	@media screen and (max-width: variables.$xl) {
+		@content;
+	}
+}
+
+@mixin media-lg {
+	@media screen and (max-width: variables.$lg) {
+		@content;
+	}
+}
+
+@mixin media-ml {
+	@media screen and (max-width: variables.$ml) {
+		@content;
+	}
+}
+
+@mixin media-md {
+	@media screen and (max-width: variables.$md) {
+		@content;
+	}
+}
+
+@mixin media-ms {
+	@media screen and (max-width: variables.$ms) {
+		@content;
+	}
+}
+
+@mixin media-sm {
+	@media screen and (max-width: variables.$sm) {
+		@content;
+	}
+}
+
+@mixin media-xs {
+	@media screen and (max-width: variables.$xs) {
+		@content;
+	}
+}
+
+@mixin media-xxs {
+	@media screen and (max-width: variables.$xxs) {
+		@content;
+	}
+}
+
+@mixin prefers-reduced-motion {
+	@media screen and (prefers-reduced-motion: reduce) {
+		@content;
+	}
+}
+
+@mixin responsiveBg($path, $ext: 'jpg', $overlay: null) {
+	background: #{$overlay}, url('#{$path}.#{$ext}'), url('#{$path}.webp');
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		background: #{$overlay}, url('#{$path}@2x.#{$ext}'),
+			url('#{$path}@2x.webp');
+	}
+
+	@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+		background: #{$overlay}, url('#{$path}@3x.#{$ext}'),
+			url('#{$path}@3x.webp');
+	}
+}
+
+@mixin icon($width, $height, $color, $image, $content: '') {
+	content: $content;
+	width: $width;
+	height: $height;
+	position: absolute;
+	mask: $image center center/cover no-repeat;
+	background: $color;
+}
+
+@mixin icon-position(
+	$horizontalPosition: left,
+	$horizontalPositionValue: 0,
+	$verticalPosition: top,
+	$verticalPositionValue: 0,
+	$translateX: 0,
+	$translateY: 0
+) {
+	#{$horizontalPosition}: $horizontalPositionValue;
+	#{$verticalPosition}: $verticalPositionValue;
+	transform: translate($translateX, $translateY);
+}

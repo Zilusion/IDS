@@ -1,0 +1,53 @@
+footer.footer
+    .container.footer__container
+        .footer__info
+            a.footer__logo(href="#") 
+                svg.icon.icon--logo.footer__logo-icon
+                    use(xlink:href="./assets/images/icons/symbol/sprite.symbol.svg#logo")
+            .footer__contacts
+                h3.footer__title Связаться с нами:
+                a.footer__text(href="tel:+71234567890") +7 (977) 777-77-77
+                a.footer__text(href="mailto:support@ids.com") support@ids.com
+            .footer__address
+                h3.footer__title Адреса:
+                p.footer__text Санкт-Петербург, ул. Вязовая, д. 10, офис 49H
+                p.footer__text Москва, ул. Ленинская Слобода, д. 19, оф. 706, БЦ «Омега плаза»
+            .footer__working-hours
+                h3.footer__title Время работы:
+                p.footer__text пн-пт: 10:00 — 19:00
+            .footer__socials
+                - 
+                    var socialLinks = [
+                        { href: "https://www.facebook.com", img: "facebook", alt: "Facebook" },
+                        { href: "https://www.instagram.com", img: "instagram", alt: "Instagram" },
+                        { href: "https://www.youtube.com", img: "youtube", alt: "YouTube" },
+                        { href: "https://twitter.com", img: "twitter", alt: "Twitter" }
+                    ]
+                each social in socialLinks
+                    a.footer__socials-item(href=social.href, target="_blank")
+                        svg.icon.icon--social.footer__socials-item-icon
+                            use(xlink:href="./assets/images/icons/symbol/sprite.symbol.svg#" + social.img)
+        form.footer__form(action="#" method="post")
+            h2.footer__form-title Обсудить проект
+            p.footer__form-text Для начала работы нам надо поговорить. Достаточно рассказать о своем проекте, указать контакты, и мы свяжемся, чтобы все обсудить.
+
+            input.footer__form-input.footer__form-name(type="text" id="name" placeholder="Ваше имя" required)
+            label.footer__form-label(for="name" class="visually-hidden") Ваше имя
+
+            input.footer__form-input.footer__form-phone(type="tel" id="phone" placeholder="Номер телефона" required)
+            label.footer__form-label(for="phone" class="visually-hidden") Номер телефона
+
+            input.footer__form-input.footer__form-email(type="email" id="email" placeholder="Электронная почта" required)
+            label.footer__form-label(for="email" class="visually-hidden") Электронная почта
+
+            textarea.footer__form-input.footer__form-about(id="about" placeholder="Расскажите о вашем проекте" required)
+            label.footer__form-label(for="about" class="visually-hidden") Расскажите о вашем проекте
+
+            input.footer__form-input.footer__form-file(type="file" id="file" class="visually-hidden")
+            label.footer__form-label.footer__form-file-label(for="file") 
+                span.footer__form-file-label-text Прикрепите файл
+
+            button.footer__form-button(type="submit") Отправить заявку
+
+
+
